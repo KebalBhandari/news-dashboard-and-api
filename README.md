@@ -1,10 +1,10 @@
 # NewsFlow — News Dashboard & API
 
-📰 NewsFlow is a full-stack Next.js application that provides a global news aggregator with a dashboard and a developer-friendly API. It supports Firebase authentication, Firestore-backed storage for articles, usage/reporting from API keys, and a minimal news scraping utility.
+NewsFlow is a full-stack Next.js application that provides a global news aggregator with a dashboard and a developer-friendly API. It supports Firebase authentication, Firestore-backed storage for articles, usage/reporting from API keys, and a minimal news scraping utility.
 
 ---
 
-## ✅ Key Features
+## Key Features
 
 - User dashboard with authentication (Firebase Auth) and article viewing
 - API key management UI for creating and revoking keys
@@ -16,7 +16,7 @@
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 - Next.js 16 (App Router)
 - React 19 + TypeScript
@@ -26,7 +26,7 @@
 
 ---
 
-## 🔁 Quick Start (Local Development)
+## Quick Start (Local Development)
 
 1. Install dependencies with your package manager (pnpm recommended):
 
@@ -46,7 +46,7 @@ npm run dev
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Create a `.env.local` file in the project root with these variables (example values):
 
@@ -69,7 +69,7 @@ Notes:
 
 ---
 
-## 🔁 Python Scripts (Utilities)
+## Python Scripts (Utilities)
 
 There are a couple of helpful Python utilities under `scripts/`:
 
@@ -99,7 +99,7 @@ python scripts/firebase_manager.py --action usage_stats --key-id YOUR_KEY_ID
 
 ---
 
-## 📁 Project Structure (Overview)
+## Project Structure (Overview)
 
 This is a brief overview of the important folders and files:
 
@@ -115,7 +115,7 @@ This is a brief overview of the important folders and files:
 
 ---
 
-## 🧭 Helpful Commands
+## Helpful Commands
 
 ```powershell
 # Development
@@ -133,7 +133,7 @@ python scripts/firebase_manager.py --help
 
 ---
 
-## ⚙️ API Endpoints (Summary)
+## API Endpoints (Summary)
 
 The API routes are under `app/api`. Most endpoints return JSON in the format below:
 
@@ -169,7 +169,7 @@ curl -X GET "http://localhost:3000/api/news?country=us&category=technology" \
 
 ---
 
-## 🔒 Security Notes
+## Security Notes
 
 - API keys are hashed with SHA-256 and stored as `keyHash` in Firestore. The raw key is only returned once on creation and must be stored by the user.
 - Rate limiting is implemented per key; consider an upgrade for better day-based/rolling window enforcement for production.
@@ -178,14 +178,14 @@ curl -X GET "http://localhost:3000/api/news?country=us&category=technology" \
 
 ---
 
-## 🧪 Testing & Debugging
+## Testing & Debugging
 
 - The app uses `next dev` for local development.
 - To test CLI scripts, run the Python scripts directly (requires `FIREBASE_SERVICE_ACCOUNT_KEY` env var or `service_account.json` path for `firebase_manager.py`).
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 - Vercel is a natural fit (Next.js), but any provider that supports Node/Next.js will work.
 - Make sure to set the runtime environment variables on the hosting provider.
@@ -193,23 +193,17 @@ curl -X GET "http://localhost:3000/api/news?country=us&category=technology" \
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 - Bug reports and PRs are welcome — please follow standard GitHub PR workflow.
 - If you'd like to propose a feature or discuss architecture changes, open an issue first.
 
 ---
 
-## 📄 License
+## Contact
 
-This project does not include an explicit license file in the repository. If you want to open source this project, add a `LICENSE` file (e.g., MIT) or update as needed.
-
----
-
-## 📞 Contact
-
-If you have questions or want assistance, create a GitHub issue or reach out to the repository owner.
+If you have questions or want assistance, create a GitHub issue or reach out to me.
 
 ---
 
-Happy hacking! ✨
+Happy Coding!
