@@ -49,8 +49,8 @@ export function DashboardNav() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="sticky px-6 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between" style={{width:'100%'}}>
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-2">
             <div className="rounded-lg bg-primary p-1.5">

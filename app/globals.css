@@ -135,3 +135,6 @@
     @apply bg-background text-foreground;
   }
 }
+.container {
+  max-width: 100%;
+}

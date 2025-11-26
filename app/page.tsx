@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from "react"
 import type { NewsArticle, NewsFilter } from "@/lib/types"
-import { DashboardNav } from "@/components/dashboard-nav"
 import { NewsCard } from "@/components/news-card"
 import { NewsFilters } from "@/components/news-filters"
 import { NewsStats } from "@/components/news-stats"
@@ -72,11 +71,9 @@ function DashboardContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      <DashboardNav />
-
-      <main className="container px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
-        {/* Header */}
+    <main className="container px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+      {/* Main content wrapper with flex column layout */}
+      <div className="flex flex-col min-h-[calc(100vh-10rem)]">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">News Dashboard</h1>
@@ -101,7 +98,7 @@ function DashboardContent() {
         )}
 
         {/* Content */}
-        <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="flex-grow grid lg:grid-cols-4 gap-6 lg:gap-8">
           {/* Filters Sidebar */}
           <aside className="lg:col-span-1 order-2 lg:order-1">
             <div className="sticky top-24">
@@ -135,17 +132,17 @@ function DashboardContent() {
             )}
           </div>
         </div>
-      </main>
+      </div>
 
-      {/* Footer */}
-      <footer className="border-t border-border/40 mt-12 bg-muted/30">
-        <div className="container px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2.5">
-              <div className="rounded-xl bg-primary p-2">
+      {/* Footer - it will be pushed to the bottom by the flex-grow on the content above */}
+      <footer className="border-t border-border/40 mt-12 pt-8 bg-muted/30">
+        <div className="py-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <div className="flex items-center gap-2.5 justify-center">
+              <div className="rounded-lg bg-primary p-1.5">
                 <Newspaper className="h-4 w-4 text-primary-foreground" />
               </div>
-              <span className="font-semibold">NewsFlow</span>
+              <span className="font-semibold text-sm">NewsFlow</span>
             </div>
             <p className="text-sm text-muted-foreground text-center sm:text-right">
               Global news aggregator with powerful API access
@@ -153,7 +150,7 @@ function DashboardContent() {
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   )
 }
 
